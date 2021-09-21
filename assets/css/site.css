@@ -1,0 +1,42 @@
+.header {
+    height : 55px;
+}
+
+.html {
+    min-width:800px;
+}
+
+.table-no {
+    background-color: #b3dafa;
+}
+
+.black-key {
+    background-color: #C0C0C0;
+}
+
+#score-table {
+    overflow-x:scroll;
+}
+
+#scale-table th {
+    width: 3em;
+    border-bottom: 2px solid;
+}
+
+#score-table td{
+    width: 2em;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-bottom: 2px solid;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+/*#add-column-button{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+}
+*/
