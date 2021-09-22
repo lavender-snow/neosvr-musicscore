@@ -21,17 +21,18 @@
 #scale-table th {
     width: 3em;
     border-bottom: 2px solid;
+    border-right: 2px solid;
+    padding: 3px 10px;
 }
 
 #score-table td{
     width: 2em;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 3px 10px;
     border-bottom: 2px solid;
 }
 
 input[type="checkbox"] {
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 /*#add-column-button{

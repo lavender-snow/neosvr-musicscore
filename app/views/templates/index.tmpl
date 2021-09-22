@@ -29,21 +29,21 @@
 
   <section class="py-5 container">
     <p class="lead text-muted">NeosVRのMusicPerform用の楽譜を作成するWebツールです。</p>
-    <p>音階表示範囲設定</p>
-    <div class="row">
-      <div class="col-md-1">最高</div>
-      <div class="col-md-1">最低</div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="row">
+    <div class="row d-flex align-items-center my-2">
+      <div class="col-md-2">
+        音階表示範囲設定
+      </div>
       <div class="col-md-1">
+        最高
         <select id="max-scale-range" class="form-select"></select>
       </div>
       <div class="col-md-1">
-        <select id="min-scale-range" class="form-select"><option>A0</option></select><br>
+        最低
+        <select id="min-scale-range" class="form-select"></select>
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-1">
+        <br>
         <select id="add-col-num" class="form-select">
           <option>1</option>
           <option>2</option>
@@ -58,7 +58,12 @@
         </select>
       </div>
       <div class="col-md-1">
+        <br>
         <button id="add-column-button" class="btn btn-primary" type="button">列追加</button>
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-2">
+        <button id="add-column-button" class="btn btn-primary" type="button">譜面作成</button>
       </div>
     </div>
     <div class="row">
