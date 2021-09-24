@@ -28,7 +28,10 @@
 	</header>
 
   <section class="py-5 container">
-    <p class="lead text-muted">NeosVRのMusicPerform用の楽譜を作成するWebツールです。</p>
+    <p class="lead text-muted">
+      NeosVRのMusicPerform用の楽譜を作成するWebツールです。<br>
+      PC版GoogleChromeのみサポートしています。
+    </p>
     <div class="row d-flex align-items-center my-2">
       <div class="col-md-2">
         音階表示範囲設定
@@ -42,226 +45,223 @@
         <select id="min-scale-range" class="form-select"></select>
       </div>
       <div class="col-md-1"></div>
-      <div class="col-md-1">
-        <br>
-        <select id="add-col-num" class="form-select">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option selected>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-        </select>
-      </div>
-      <div class="col-md-1">
-        <br>
-        <button id="add-column-button" class="btn btn-primary" type="button">列追加</button>
-      </div>
-      <div class="col-md-3"></div>
+      <div class="col-md-2"></div>
       <div class="col-md-2">
-        <button id="add-column-button" class="btn btn-primary" type="button">譜面作成</button>
+        <br>
+        <button id="create-score-button" class="btn btn-primary" type="button">譜面作成</button>
       </div>
     </div>
     <div class="row">
-        <div class="row">
-          <div class="col-md-1 pe-0 text-center">
-          <table id="scale-table" class="table">
-            <tbody>
-              <tr class="table-no"><th>音階</th></tr>
-              <tr><th>C8</th></tr>
-              <tr><th>B7</th></tr>
-              <tr class="black-key"><th>A#7</th></tr>
-              <tr><th>A7</th></tr>
-              <tr class="black-key"><th>G#7</th></tr>
-              <tr><th>G7</th></tr>
-              <tr class="black-key"><th>F#7</th></tr>
-              <tr><th>F7</th></tr>
-              <tr><th>E7</th></tr>
-              <tr class="black-key"><th>D#7</th></tr>
-              <tr><th>D7</th></tr>
-              <tr class="black-key"><th>C#7</th></tr>
-              <tr><th>C7</th></tr>
-              <tr><th>B6</th></tr>
-              <tr class="black-key"><th>A#6</th></tr>
-              <tr><th>A6</th></tr>
-              <tr class="black-key"><th>G#6</th></tr>
-              <tr><th>G6</th></tr>
-              <tr class="black-key"><th>F#6</th></tr>
-              <tr><th>F6</th></tr>
-              <tr><th>E6</th></tr>
-              <tr class="black-key"><th>D#6</th></tr>
-              <tr><th>D6</th></tr>
-              <tr class="black-key"><th>C#6</th></tr>
-              <tr><th>C6</th></tr>
-              <tr><th>B5</th></tr>
-              <tr class="black-key"><th>A#5</th></tr>
-              <tr><th>A5</th></tr>
-              <tr class="black-key"><th>G#5</th></tr>
-              <tr><th>G5</th></tr>
-              <tr class="black-key"><th>F#5</th></tr>
-              <tr><th>F5</th></tr>
-              <tr><th>E5</th></tr>
-              <tr class="black-key"><th>D#5</th></tr>
-              <tr><th>D5</th></tr>
-              <tr class="black-key"><th>C#5</th></tr>
-              <tr><th>C5</th></tr>
-              <tr><th>B4</th></tr>
-              <tr class="black-key"><th>A#4</th></tr>
-              <tr><th>A4</th></tr>
-              <tr class="black-key"><th>G#4</th></tr>
-              <tr><th>G4</th></tr>
-              <tr class="black-key"><th>F#4</th></tr>
-              <tr><th>F4</th></tr>
-              <tr><th>E4</th></tr>
-              <tr class="black-key"><th>D#4</th></tr>
-              <tr><th>D4</th></tr>
-              <tr class="black-key"><th>C#4</th></tr>
-              <tr><th>C4</th></tr>
-              <tr><th>B3</th></tr>
-              <tr class="black-key"><th>A#3</th></tr>
-              <tr><th>A3</th></tr>
-              <tr class="black-key"><th>G#3</th></tr>
-              <tr><th>G3</th></tr>
-              <tr class="black-key"><th>F#3</th></tr>
-              <tr><th>F3</th></tr>
-              <tr><th>E3</th></tr>
-              <tr class="black-key"><th>D#3</th></tr>
-              <tr><th>D3</th></tr>
-              <tr class="black-key"><th>C#3</th></tr>
-              <tr><th>C3</th></tr>
-              <tr><th>B2</th></tr>
-              <tr class="black-key"><th>A#2</th></tr>
-              <tr><th>A2</th></tr>
-              <tr class="black-key"><th>G#2</th></tr>
-              <tr><th>G2</th></tr>
-              <tr class="black-key"><th>F#2</th></tr>
-              <tr><th>F2</th></tr>
-              <tr><th>E2</th></tr>
-              <tr class="black-key"><th>D#2</th></tr>
-              <tr><th>D2</th></tr>
-              <tr class="black-key"><th>C#2</th></tr>
-              <tr><th>C2</th></tr>
-              <tr><th>B1</th></tr>
-              <tr class="black-key"><th>A#1</th></tr>
-              <tr><th>A1</th></tr>
-              <tr class="black-key"><th>G#1</th></tr>
-              <tr><th>G1</th></tr>
-              <tr class="black-key"><th>F#1</th></tr>
-              <tr><th>F1</th></tr>
-              <tr><th>E1</th></tr>
-              <tr class="black-key"><th>D#1</th></tr>
-              <tr><th>D1</th></tr>
-              <tr class="black-key"><th>C#1</th></tr>
-              <tr><th>C1</th></tr>
-              <tr><th>B0</th></tr>
-              <tr class="black-key"><th>A#0</th></tr>
-              <tr><th>A0</th></tr>
-            </tbody>
-          </table>
-          </div>
-          <div class="col-md-11 ps-0 table-responsive">
-          <table id="score-table" class="table">
-            <tbody>
-              <tr class="table-no"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr class="black-key"></tr>
-              <tr></tr>
-            </tbody>
-          </table>
-          </div>
-        </div>
+      <div class="col-md-1 pe-0 text-center" id="">
+      <table id="scale-table" class="table">
+        <tbody>
+          <tr class="table-no"><th>音階</th></tr>
+          <tr><th>C8</th></tr>
+          <tr><th>B7</th></tr>
+          <tr class="black-key"><th>A#7</th></tr>
+          <tr><th>A7</th></tr>
+          <tr class="black-key"><th>G#7</th></tr>
+          <tr><th>G7</th></tr>
+          <tr class="black-key"><th>F#7</th></tr>
+          <tr><th>F7</th></tr>
+          <tr><th>E7</th></tr>
+          <tr class="black-key"><th>D#7</th></tr>
+          <tr><th>D7</th></tr>
+          <tr class="black-key"><th>C#7</th></tr>
+          <tr><th>C7</th></tr>
+          <tr><th>B6</th></tr>
+          <tr class="black-key"><th>A#6</th></tr>
+          <tr><th>A6</th></tr>
+          <tr class="black-key"><th>G#6</th></tr>
+          <tr><th>G6</th></tr>
+          <tr class="black-key"><th>F#6</th></tr>
+          <tr><th>F6</th></tr>
+          <tr><th>E6</th></tr>
+          <tr class="black-key"><th>D#6</th></tr>
+          <tr><th>D6</th></tr>
+          <tr class="black-key"><th>C#6</th></tr>
+          <tr><th>C6</th></tr>
+          <tr><th>B5</th></tr>
+          <tr class="black-key"><th>A#5</th></tr>
+          <tr><th>A5</th></tr>
+          <tr class="black-key"><th>G#5</th></tr>
+          <tr><th>G5</th></tr>
+          <tr class="black-key"><th>F#5</th></tr>
+          <tr><th>F5</th></tr>
+          <tr><th>E5</th></tr>
+          <tr class="black-key"><th>D#5</th></tr>
+          <tr><th>D5</th></tr>
+          <tr class="black-key"><th>C#5</th></tr>
+          <tr><th>C5</th></tr>
+          <tr><th>B4</th></tr>
+          <tr class="black-key"><th>A#4</th></tr>
+          <tr><th>A4</th></tr>
+          <tr class="black-key"><th>G#4</th></tr>
+          <tr><th>G4</th></tr>
+          <tr class="black-key"><th>F#4</th></tr>
+          <tr><th>F4</th></tr>
+          <tr><th>E4</th></tr>
+          <tr class="black-key"><th>D#4</th></tr>
+          <tr><th>D4</th></tr>
+          <tr class="black-key"><th>C#4</th></tr>
+          <tr><th>C4</th></tr>
+          <tr><th>B3</th></tr>
+          <tr class="black-key"><th>A#3</th></tr>
+          <tr><th>A3</th></tr>
+          <tr class="black-key"><th>G#3</th></tr>
+          <tr><th>G3</th></tr>
+          <tr class="black-key"><th>F#3</th></tr>
+          <tr><th>F3</th></tr>
+          <tr><th>E3</th></tr>
+          <tr class="black-key"><th>D#3</th></tr>
+          <tr><th>D3</th></tr>
+          <tr class="black-key"><th>C#3</th></tr>
+          <tr><th>C3</th></tr>
+          <tr><th>B2</th></tr>
+          <tr class="black-key"><th>A#2</th></tr>
+          <tr><th>A2</th></tr>
+          <tr class="black-key"><th>G#2</th></tr>
+          <tr><th>G2</th></tr>
+          <tr class="black-key"><th>F#2</th></tr>
+          <tr><th>F2</th></tr>
+          <tr><th>E2</th></tr>
+          <tr class="black-key"><th>D#2</th></tr>
+          <tr><th>D2</th></tr>
+          <tr class="black-key"><th>C#2</th></tr>
+          <tr><th>C2</th></tr>
+          <tr><th>B1</th></tr>
+          <tr class="black-key"><th>A#1</th></tr>
+          <tr><th>A1</th></tr>
+          <tr class="black-key"><th>G#1</th></tr>
+          <tr><th>G1</th></tr>
+          <tr class="black-key"><th>F#1</th></tr>
+          <tr><th>F1</th></tr>
+          <tr><th>E1</th></tr>
+          <tr class="black-key"><th>D#1</th></tr>
+          <tr><th>D1</th></tr>
+          <tr class="black-key"><th>C#1</th></tr>
+          <tr><th>C1</th></tr>
+          <tr><th>B0</th></tr>
+          <tr class="black-key"><th>A#0</th></tr>
+          <tr><th>A0</th></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="col-md-11 ps-0 table-responsive">
+      <form id="score-form">
+      <table id="score-table" class="table">
+        <tbody>
+          <tr class="table-no"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="black-key"></tr>
+          <tr></tr>
+        </tbody>
+      </table>
+      </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          音階早見図<br>
+          一般的な曲で使用される音は以下の図の通りです。<br>
+          上へ行く(数字が大きくなる)ほど音が高くなり、<br>
+          下へ行く(数字が小さくなる)ほど音が低くなります。
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <img src="/assets/img/scale_gclef.png" height="95%" width="95%" alt="ト音記号表" >
       </div>
     </div>
   </section>
   <script src="/assets/js/index.js"></script>
+  <script src="/assets/js/fetch.js"></script>
 </body>
 </html>

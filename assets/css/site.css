@@ -16,6 +16,7 @@
 
 #score-table {
     overflow-x:scroll;
+    width:43px;
 }
 
 #scale-table th {
