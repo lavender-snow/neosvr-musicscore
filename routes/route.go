@@ -11,7 +11,7 @@ import (
 func Routes(engine *gin.Engine) {
 	engine.GET("/score-creator", indexHandler)
 	engine.POST("/score-creator/create", createHandler)
-	engine.GET("/score-creator/score-data", scoreDataHandler)
+	engine.GET("/score-creator/score", scoreDataHandler)
 }
 
 func indexHandler(context *gin.Context) {
@@ -21,10 +21,21 @@ func indexHandler(context *gin.Context) {
 func createHandler(context *gin.Context) {
 	log.Printf(context.Request.URL.Path)
 	scores := context.PostFormArray("score")
-	url := controllers.ScoreCreateController(scores)
-	context.String(http.StatusOK, url)
+	hash, err := controllers.CreateScoreController(scores)
+	if err != nil {
+		context.String(http.StatusServiceUnavailable, "譜面生成に失敗しました.\r\nFailed to generate score.")
+	}
+	context.String(http.StatusOK, hash)
 }
 
 func scoreDataHandler(context *gin.Context) {
-	context.String(http.StatusOK, context.Param("v"))
+
+	score, err := controllers.GetScoreController(context.Query("v"))
+
+	if err != nil {
+		log.Printf(err.Error())
+		context.String(http.StatusBadRequest, "BadRequest")
+	}
+
+	context.String(http.StatusOK, score)
 }

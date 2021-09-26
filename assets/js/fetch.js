@@ -8,19 +8,22 @@ document.addEventListener('DOMContentLoaded', function(e) {
 function createScore() {
     let form = document.getElementById("score-form");
     let formData = new FormData(form);
-    for (let value of formData) {
-        console.log(value);
-    }
     fetch("/score-creator/create", {
         method: "post",
         headers: {},
         body: formData
     }).then(function (response){
+        resultDiv = document.getElementById("fetch-result");
         if (response.status === 200) {
-            console.log("Suceess");
-            console.log(response.body);
+            response.text().then(hash => {
+                console.log(hash);
+                let url = `${window.location.protocol}//${window.location.host}/score-creator/score?v=${hash}`;
+                resultDiv.innerHTML = `<p>URLの生成が完了しました。GenerateScoreMachineに以下のURLを入力してください。<br>${url}</p>`;
+            });
+        }else if(response.status === 503){
+            resultDiv.innerHTML = `<p class='text-danger'>${response.body.json()}</p>`;
         }else{
-            console.log("Failed");
+            resultDiv.innerHTML = "<p class='text-danger'>原因不明のエラーが発生しました</p>";
         }
     }).catch(function (response){
         console.log(response);

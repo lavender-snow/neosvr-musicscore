@@ -13,6 +13,7 @@ type configList struct {
 	CertFile  string
 	KeyFile   string
 	SecretKey string
+	DBfile    string
 }
 
 const (
@@ -28,10 +29,11 @@ func init() {
 		log.Fatalf("iniファイルの読込に失敗しました: %v\n", err.Error())
 	}
 
+	errMsg := ""
 	secretKey := cfg.Section("session").Key("secret_key").String()
 
 	if secretKey == "" {
-		log.Fatalln("iniファイルにsecretKeyが設定されていません")
+		errMsg += "iniファイルにsecretKeyが設定されていません\r\n"
 	}
 
 	portNo := fmt.Sprintf(":%s", cfg.Section("gin").Key("port_no").String())
@@ -52,7 +54,17 @@ func init() {
 	keyFile := cfg.Section("gin").Key("key_file").String()
 
 	if runMode == "https" && (len(certFile) == 0 || len(keyFile) == 0) {
-		log.Fatalln("実行モードがhttpsに設定されていますが、SSL証明書の情報が設定されていません")
+		errMsg += "実行モードがhttpsに設定されていますが、SSL証明書の情報が設定されていません\r\n"
+	}
+
+	dbFile := cfg.Section("db").Key("file_name").String()
+
+	if len(dbFile) == 0 {
+		errMsg += "sqlite3ファイルが設定されていません\r\n"
+	}
+
+	if len(errMsg) > 0 {
+		log.Fatalln(errMsg)
 	}
 
 	Config = configList{
@@ -61,5 +73,6 @@ func init() {
 		RunMode:   runMode,
 		CertFile:  certFile,
 		KeyFile:   keyFile,
+		DBfile:    dbFile,
 	}
 }

@@ -5,10 +5,11 @@ import (
 	"log"
 	"strconv"
 	"strings"
+
+	"github.com/lavender-snow/neosvr-musicscore/app/models"
 )
 
-func ScoreCreateController(scores []string) string {
-	url := ""
+func CreateScoreController(scores []string) (string, error) {
 
 	maxLength := 0
 	for _, score := range scores {
@@ -35,6 +36,19 @@ func ScoreCreateController(scores []string) string {
 
 	scoreData := fmt.Sprintf("%s;", strings.Join(units, ";"))
 	log.Printf(scoreData)
+	id, err := models.InsertScoreData(scoreData)
+	if err != nil {
+		log.Printf(err.Error())
+		return "", err
+	}
 
-	return url
+	return id, nil
+}
+
+func GetScoreController(id string) (string, error) {
+	score, err := models.SelectScoreData(id)
+	if err != nil {
+		return "", err
+	}
+	return score, nil
 }
