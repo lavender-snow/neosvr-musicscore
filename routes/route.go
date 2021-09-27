@@ -8,6 +8,7 @@ import (
 	"github.com/lavender-snow/neosvr-musicscore/app/controllers"
 )
 
+// Routes ルート情報を設定
 func Routes(engine *gin.Engine) {
 	engine.GET("/score-creator", indexHandler)
 	engine.POST("/score-creator/create", createHandler)

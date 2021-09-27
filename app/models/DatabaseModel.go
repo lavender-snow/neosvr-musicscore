@@ -10,6 +10,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
+// connectDB DB接続処理
 func connectDB() *sql.DB {
 	db, err := sql.Open("sqlite3", config.Config.DBfile)
 	if err != nil {
@@ -18,6 +19,7 @@ func connectDB() *sql.DB {
 	return db
 }
 
+// InsertScoreData DBへ譜面情報を登録する
 func InsertScoreData(scoreData string) (string, error) {
 
 	byteData := []byte(scoreData)
@@ -26,6 +28,7 @@ func InsertScoreData(scoreData string) (string, error) {
 	db := connectDB()
 	defer db.Close()
 
+	// 既に同一IDのデータが存在する場合はINSERT文を実行しない
 	if data, _ := SelectScoreData(id); data == "" {
 		query := "INSERT INTO score_data('id','data') VALUES($1, $2);"
 		stmt, _ := db.Prepare(query)
@@ -41,6 +44,7 @@ func InsertScoreData(scoreData string) (string, error) {
 	return id, nil
 }
 
+// SelectScoreData DBからIDに対応する譜面情報を取得する
 func SelectScoreData(id string) (string, error) {
 	db := connectDB()
 	defer db.Close()

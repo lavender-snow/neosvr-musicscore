@@ -20,7 +20,7 @@ const (
 	configIni = "config.ini"
 )
 
-// Config は設定情報を管理します
+// Config 設定情報を管理
 var Config configList
 
 func init() {

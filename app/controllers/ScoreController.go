@@ -9,6 +9,7 @@ import (
 	"github.com/lavender-snow/neosvr-musicscore/app/models"
 )
 
+// CreateScoreController 引き渡された入力情報を基に譜面を作成
 func CreateScoreController(scores []string) (string, error) {
 
 	maxLength := 0
@@ -45,6 +46,7 @@ func CreateScoreController(scores []string) (string, error) {
 	return id, nil
 }
 
+// GetScoreController 引き渡されたIDに対応する譜面情報を返却
 func GetScoreController(id string) (string, error) {
 	score, err := models.SelectScoreData(id)
 	if err != nil {
