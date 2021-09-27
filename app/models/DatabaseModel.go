@@ -7,6 +7,7 @@ import (
 	"log"
 
 	"github.com/lavender-snow/neosvr-musicscore/config"
+	// sqlite3 Driver
 	_ "github.com/mattn/go-sqlite3"
 )
 
