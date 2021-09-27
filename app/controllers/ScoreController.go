@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"log"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -36,6 +37,10 @@ func CreateScoreController(scores []string) (string, error) {
 	}
 
 	scoreData := fmt.Sprintf("%s;", strings.Join(units, ";"))
+
+	rep := regexp.MustCompile(`;+`)
+	scoreData = rep.ReplaceAllString(scoreData, ";")
+
 	log.Printf(scoreData)
 	id, err := models.InsertScoreData(scoreData)
 	if err != nil {
