@@ -14,6 +14,14 @@
     background-color: #C0C0C0;
 }
 
+.col-scale-range-label {
+    min-width: 160px;
+}
+
+.col-scale-range {
+    min-width: 95px;
+}
+
 .col-scale{
     flex: 0 0 auto;
     width: 70px;
